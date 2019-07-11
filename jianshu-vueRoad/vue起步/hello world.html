@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello World</title>
+    <script src="http://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div @click="allInfo">
+            {{flag ? content : data}}
+        </div>
+        <ul>
+            <li v-for="item in showlist">{{item}}</li>
+        </ul>
+        <button v-if="list.length > 5" @click="load()">加载</button>
+
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                data: 'hello world',
+                content: '',
+                flag: true,
+                showlist: [],
+                num: 5,
+                list: [
+                    "message1", 
+                    "message2", 
+                    "message3",
+                    "message4", 
+                    "message5", 
+                    "message6", 
+                    "message7", 
+                    "message8", 
+                    "message9", 
+                    "message10", 
+                    "message11", 
+                    "message12", 
+                    "message13", 
+                    "message14"]
+            },
+            methods: {
+                allInfo() {
+                    this.flag = !this.flag;
+                    // if (!this.flag) {
+                    //     this.flag=true;
+                    //     this.content = this.data.substr(0);
+                    // }else{
+                    //     this.content = this.data.substr(0, 5);
+                    //     this.flag = false;
+                    // }
+                },
+                load() {
+                    if(this.num <= this.list.length){
+                        this.showlist = this.list.slice(0, this.num + 5)
+                    this.num = this.num +5;
+                    }else{
+                        alert('已加载全部')
+                    }
+                    
+                    console.log("num",this.num)
+                }
+            },
+            created() {
+                this.content = this.data.substr(0, 5);
+                if (this.list.length <= 5) {
+                    this.showlist = this.list;
+                } else {
+                    this.showlist = this.list.slice(0, 5);
+                }
+            }
+        });
+        // setTimeout(function(){
+        //     app.$data.content = 'bye world!';
+        // },2000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+vue
+    读音：同view
+
+    vue 到底是什么？
+        一个mvvm框架（库）、和angular类似
+        比较容易上手、小巧
+    mvc：
+        mvvm
+        mvp
+        mv
+        mvx
+    官网 http://cn.vuejs.org
+    手册 http://cn.vuejs.org/api
+vue 和 angular 区别？
+    vue -- 简单易学
+        指令以v-xx开头
+        一片HTML代码配合上json,在new出来一个vue实例
+        由个人维护
+        更适合移动端项目，小巧
+
+    angular --上手难
+        指令以ng-xx开头
+        所有的属性与方法都挂在$scope身上
+        由google进行维护
+        更适合pc端项目
+    共同点：
+        不兼容低版本IE
