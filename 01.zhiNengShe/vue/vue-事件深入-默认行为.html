@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <script>
+        window.onload = function () {
+            var c = new Vue({
+                el: '#box',
+                data: {//数据
+
+                },
+                methods: {
+                    //方法
+                    show: function (ev) {
+                        alert(1);
+                        ev.preventDefault();
+                    },
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+            <input type="button" value="按钮" @contextmenu="show($event)">
+    </div>
+</body>
+
+</html>

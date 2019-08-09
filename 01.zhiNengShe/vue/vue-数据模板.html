@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <script>
+        window.onload = function () {
+            var c = new Vue({
+                el: '#box',
+                data: {
+                    msg: 'welcome vue'
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <input type="text" v-model="msg"/>
+        <!-- 只更新一次 -->
+        <!-- 可以识别标签 -->
+        <!-- <input type="text" v-text="msg"/> -->
+        <!-- 不识别标签 -->
+
+        {{msg}}<br/>
+        <!-- *{{* msg}}  <br/> -->
+        <!-- //数据只绑定一次 不支持这种写法 -->
+        <p v-once>{{msg}}</p>
+
+        <!-- {{{msg}}}  -->
+        <!-- 识别标签  不支持-->
+        <p v-html="msg"></p>
+
+    </div>
+</body>
+
+</html>
